@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Material You NewTab",
+  "version": "1.0.0",
+  "description": "A beautiful, customizable new tab page with weather, search, bookmarks, AI tools, and more.",
+  
+  "permissions": [
+    "storage",
+    "bookmarks",
+    "tabs",
+    "activeTab",
+    "geolocation"
+  ],
+  
+  "host_permissions": [
+    "https://api.openweathermap.org/*",
+    "https://wttr.in/*",
+    "https://*.google.com/*",
+    "https://*.bing.com/*",
+    "https://*.duckduckgo.com/*",
+    "https://*.youtube.com/*",
+    "https://*.reddit.com/*",
+    "https://*.wikipedia.org/*",
+    "https://*.quora.com/*",
+    "https://*.brave.com/*"
+  ],
+  
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  
+  "icons": {
+    "48": "favicon/icon48.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*",
+        "fonts/*",
+        "favicon/*",
+        "locales/*",
+        "scripts/*",
+        "style.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data: https: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline';"
+  },
+  
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Material You NewTab",
+    "default_icon": {
+      "48": "favicon/icon48.png"
+    }
+  }
+}
